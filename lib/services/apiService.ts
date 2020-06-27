@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({
+const apiService = axios.create({
   baseURL: 'https://lol.gamepedia.com/index.php?title=Special:CargoExport',
 });
 
-export default api;
+export default apiService;
