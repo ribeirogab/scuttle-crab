@@ -78,7 +78,7 @@ interface Field {
     | '_ID';
 }
 
-export interface Request {
+export interface FindRequest {
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';
@@ -88,5 +88,5 @@ export interface Request {
 }
 
 export interface ChampionsRepository {
-  find({ order_by, fields, limit }: Request): Promise<Champion[]>;
+  find({ order_by, fields, limit }: FindRequest): Promise<Champion[]>;
 }
