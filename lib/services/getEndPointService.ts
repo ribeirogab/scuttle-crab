@@ -27,7 +27,7 @@ function getEndPointService({
     : '';
 
   const url = `&table=${type}&fields=${fieldsValue}&order+by=${orderByValue}&limit=${
-    limit || 100
+    limit || 999
   }&format=json`;
 
   return url;
