@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://raw.githubusercontent.com/ribeirogab/scuttle-crab/master/examples/logo.png" alt="scuttle-crab" width="360"/>
+<img src="https://raw.githubusercontent.com/ribeirogab/scuttle-crab/master/examples/logo.png" alt="scuttle-crab" width="200"/>
 </h1>
 
 # Scuttle Crab
@@ -87,7 +87,7 @@ main();
 
 ### Step 3
 
-- 🔃  Create a new pull request using <a href="https://github.com/ribeirogab/jikan-nodejs/compare/" target="_blank">`https://github.com/ribeirogab/jikan-nodejs/compare/`</a>.
+- 🔃  Create a new pull request using <a href="https://github.com/ribeirogab/scuttle-crab/compare/" target="_blank">`https://github.com/ribeirogab/scuttle-crab/compare/`</a>.
 
 ---
 
