@@ -1,0 +1,31 @@
+{
+  "name": "scuttle-crab",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/ribeirogab/scuttle-crab.git",
+  "author": "ribeirogab <ribeirogabx@gmail.com>",
+  "license": "MIT",
+  "description": "A Node.js wrapper for lol.gamepedia REST API.",
+  "keywords": ["lol", "leagueoflegends", "wrapper", "games"],
+  "scripts": {
+    "build": "tsc",
+    "test": "node tests/index.js",
+    "dev:server": "ts-node-dev --inspect --no-notify --transpileOnly --ignore-watch node_modules src/server.ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "^2.0.4",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
