@@ -25,7 +25,7 @@ $ yarn add scuttle-crap
 
 > Feature: champions > find
 ```js
-const { champions } = require('scuttle-crap');
+const { champions } = require('scuttle-crab');
 
 async function main() {
   const championsRepository = champions();
@@ -42,7 +42,7 @@ main();
 
 > Feature: champions > find
 ```js
-const { champions } = require('scuttle-crap');
+const { champions } = require('scuttle-crab');
 
 async function main() {
   const championsRepository = champions();
