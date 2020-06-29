@@ -40,15 +40,38 @@ interface Field {
     | '_ID';
 }
 
+type Keys =
+  | 'Name'
+  | 'Skin'
+  | 'Champion'
+  | 'IsBundleExclusive'
+  | 'IsLootExclusive'
+  | 'Special'
+  | 'ReleaseDate'
+  | 'BundleRP'
+  | 'RP'
+  | 'Hex1'
+  | 'Hex2'
+  | 'UniqueSet'
+  | '_pageName'
+  | '_pageTitle'
+  | '_pageNamespace'
+  | '_pageID'
+  | '_ID';
+
 export interface FindRequest {
+  fields?: Field[];
+  where?: {
+    $AND?: { $LIKE: { [key in Keys]?: string | number } };
+    $OR?: { $LIKE: { [key in Keys]?: string | number } };
+  };
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';
   };
-  fields?: Field[];
   limit?: number;
 }
 
 export interface ChromasRepository {
-  find({ order_by, fields, limit }: FindRequest): Promise<Chroma[]>;
+  find({ fields, where, order_by, limit }: FindRequest): Promise<Chroma[]>;
 }

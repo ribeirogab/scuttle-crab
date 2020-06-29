@@ -78,15 +78,57 @@ interface Field {
     | '_ID';
 }
 
+type Keys =
+  | 'Name'
+  | 'Title'
+  | 'ReleaseDate'
+  | 'BE'
+  | 'RP'
+  | 'Attributes'
+  | 'Resource'
+  | 'RealName'
+  | 'Health'
+  | 'HPLevel'
+  | 'HPDisplay'
+  | 'HPLevelDisplay'
+  | 'HPRegen'
+  | 'HPRegenLevel'
+  | 'Mana'
+  | 'ManaLevel'
+  | 'ManaRegen'
+  | 'ManaRegenLevel'
+  | 'Energy'
+  | 'EnergyRegen'
+  | 'Movespeed'
+  | 'AttackDamage'
+  | 'ASLevel'
+  | 'AttackRange'
+  | 'Armor'
+  | 'ArmorLevel'
+  | 'MagicResist'
+  | 'MagicResistLevel'
+  | 'Pronoun'
+  | 'KeyDdragon'
+  | 'KeyInteger'
+  | '_pageName'
+  | '_pageTitle'
+  | '_pageNamespace'
+  | '_pageID'
+  | '_ID';
+
 export interface FindRequest {
+  fields?: Field[];
+  where?: {
+    $AND?: { $LIKE?: { [key in Keys]?: string | number } };
+    $OR?: { $LIKE?: { [key in Keys]?: string | number } };
+  };
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';
   };
-  fields?: Field[];
   limit?: number;
 }
 
 export interface ChampionsRepository {
-  find({ order_by, fields, limit }: FindRequest): Promise<Champion[]>;
+  find({ fields, where, order_by, limit }: FindRequest): Promise<Champion[]>;
 }
