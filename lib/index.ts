@@ -28,7 +28,7 @@ import currentLeagues from './functions/CurrentLeagues';
 // import playerPronunciationFiles from './functions/PlayerPronunciationFiles';
 // import playerRedirects from './functions/PlayerRedirects';
 // import playerRenames from './functions/PlayerRenames';
-// import players from './functions/Players';
+import players from './functions/Players';
 // import regionStatuses from './functions/RegionStatuses';
 // import regions from './functions/Regions';
 // import residencyChanges from './functions/ResidencyChanges';
@@ -37,7 +37,7 @@ import currentLeagues from './functions/CurrentLeagues';
 // import rosterChangePortalPages from './functions/RosterChangePortalPages';
 // import rosterChanges from './functions/RosterChanges';
 // import rosterRumors from './functions/RosterRumors';
-// import scoreboardGames from './functions/ScoreboardGames';
+import scoreboardGames from './functions/ScoreboardGames';
 // import scoreboardPlayers from './functions/ScoreboardPlayers';
 // import scoreboardTeams from './functions/ScoreboardTeams';
 // import sisterTeams from './functions/SisterTeams';
@@ -66,4 +66,6 @@ export default {
   chromaSets,
   chromas,
   currentLeagues,
+  players,
+  scoreboardGames,
 };
