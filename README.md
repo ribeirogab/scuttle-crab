@@ -75,6 +75,10 @@ main();
   - Find;
 - Chromas:
   - Find;
+- Players:
+  - Find;
+- Scoreboard Games:
+  - Find;
 
 ---
 
