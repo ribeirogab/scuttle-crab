@@ -1,6 +1,6 @@
 {
   "name": "scuttle-crab",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "repository": "https://github.com/ribeirogab/scuttle-crab.git",
   "author": "ribeirogab <ribeirogabx@gmail.com>",
@@ -10,7 +10,8 @@
   "scripts": {
     "build": "tsc",
     "test": "node tests/index.js",
-    "dev:server": "ts-node-dev --inspect --no-notify --transpileOnly --ignore-watch node_modules src/server.ts"
+    "dev:server": "ts-node-dev --inspect --no-notify --transpileOnly --ignore-watch node_modules src/server.ts",
+    "npm:publish": "tsc && npm publish --access public"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.28.0",
