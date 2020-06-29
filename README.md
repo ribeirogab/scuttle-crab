@@ -7,7 +7,7 @@
 
 For more information, please refer to [API documentation](https://lol.gamepedia.com/Help:API_Documentation).
 
-## Getting Started 
+## Getting Started
 
 ### Installation
 
@@ -29,13 +29,13 @@ const { champions } = require('scuttle-crab');
 
 async function main() {
   const championsRepository = champions();
-  
+
   const allChampions = await championsRepository.find({});
-  
+
   console.log(allChampions);
 }
 
-main(); 
+main();
 ```
 
 ### Example 2
@@ -46,17 +46,17 @@ const { champions } = require('scuttle-crab');
 
 async function main() {
   const championsRepository = champions();
-  
-  const NameOfTeenChampions = await championsRepository.find({ 
+
+  const NameOfTeenChampions = await championsRepository.find({
      order_by: { field: { name: 'Name' }, order: 'DESC' }, // order by name
      fields: [{ name: 'Name' }], // only field name
      limit: 10,
   });
-  
+
   console.log(NameOfTeenChampions);
 }
 
-main(); 
+main();
 ```
 
 
@@ -65,6 +65,8 @@ main();
 - Champions:
   - Find;
 - Current Leagues:
+  - Find;
+- Champion Flashcards:
   - Find;
 
 ---
@@ -94,7 +96,7 @@ main();
 ## Contributors
 
 | <img width="115"> | <img width="115"> | <img width="115"> | <img width="115"> | <img width="115"> | <img width="115"> |
-|:-:|:-:|:-:|:-:|:-:|:-:| 
+|:-:|:-:|:-:|:-:|:-:|:-:|
 
 ## Author
 
@@ -107,7 +109,7 @@ main();
 
 - **How do I do *specifically* so and so?**
     - No problem! Just do this.
-    
+
 ---
 
 ## Support
