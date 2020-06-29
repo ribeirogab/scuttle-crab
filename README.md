@@ -68,6 +68,10 @@ main();
   - Find;
 - Champion Flashcards:
   - Find;
+- Chroma Set:
+  - Find;
+- Chromas:
+  - Find;
 
 ---
 
