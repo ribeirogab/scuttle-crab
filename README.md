@@ -1,8 +1,9 @@
 <h1 align="center">
-<img src="https://raw.githubusercontent.com/ribeirogab/scuttle-crab/master/examples/logo.png" alt="scuttle-crab" width="200"/>
+  <img src="https://raw.githubusercontent.com/ribeirogab/scuttle-crab/master/examples/logo.png" alt="scuttle-crab" width="200"/>
 </h1>
 
 # Scuttle Crab
+
 > A wrapper for the LOL Gamepedia REST API.
 
 For more information, please refer to [API documentation](https://lol.gamepedia.com/Help:API_Documentation).
@@ -12,18 +13,20 @@ For more information, please refer to [API documentation](https://lol.gamepedia.
 ### Installation
 
 if you use npm
-```
-$ npm install scuttle-crap
+
+```bash
+npm install scuttle-crap
 ```
 
 if you use yarn
 ```
-$ yarn add scuttle-crap
+yarn add scuttle-crap
 ```
 
 ### Example 1
 
 > Feature: champions > find
+
 ```js
 const { champions } = require('scuttle-crab');
 
@@ -41,28 +44,28 @@ main();
 ### Example 2
 
 > Feature: champions > find
+
 ```js
 const { champions } = require('scuttle-crab');
 
 async function main() {
   const championsRepository = champions();
 
-  const NameOfTeenChampions = await championsRepository.find({
+  const NameOfTenChampions = await championsRepository.find({
      order_by: { field: { name: 'Name' }, order: 'DESC' }, // order by name
      fields: [{ name: 'Name' }], // only field name
      limit: 10,
   });
 
-  console.log(NameOfTeenChampions);
+  console.log(NameOfTenChampions);
 }
 
 main();
 ```
 
-
-
 ## Features
-- Champions:
+
+- [Champions]('https://github.com/ribeirogab/scuttle-crab/tree/master/examples/doc/Features/Champions'):
   - Find;
 - Current Leagues:
   - Find;
@@ -82,10 +85,9 @@ main();
 ### Step 1
 
 - **Option 1**
-    - 🍴  Fork this repo!
-
+  - 🍴  Fork this repo!
 - **Option 2**
-    - 👯  Clone this repo to your local machine using `git clone https://github.com/ribeirogab/scuttle-crab.git`
+  - 👯  Clone this repo to your local machine using `git clone https://github.com/ribeirogab/scuttle-crab.git`
 
 ### Step 2
 
