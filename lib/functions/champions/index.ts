@@ -1,4 +1,4 @@
-import { ChampionsRepository } from '../../interfaces/Champion';
+import { ChampionsRepository } from '../../interfaces/Champions';
 
 import find from './find';
 

@@ -1,4 +1,4 @@
-import { CurrentLeaguesRepository } from '../../interfaces/CurrentLeague';
+import { CurrentLeaguesRepository } from '../../interfaces/CurrentLeagues';
 
 import find from './find';
 

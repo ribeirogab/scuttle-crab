@@ -1,4 +1,4 @@
-import { CurrentLeague, FindRequest } from '../../interfaces/CurrentLeague';
+import { CurrentLeague, FindRequest } from '../../interfaces/CurrentLeagues';
 
 import getEndPointService from '../../services/getEndPointService';
 import apiService from '../../services/apiService';

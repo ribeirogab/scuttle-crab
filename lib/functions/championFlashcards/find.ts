@@ -1,7 +1,7 @@
 import {
   ChampionFlashcard,
   FindRequest,
-} from '../../interfaces/ChampionFlashcard';
+} from '../../interfaces/ChampionFlashcards';
 
 import getEndPointService from '../../services/getEndPointService';
 import apiService from '../../services/apiService';
@@ -22,7 +22,7 @@ export default async function find({
     limit,
   });
 
-  const { data: championFlashcard } = await apiService.get(endPoint);
+  const { data: championFlashcards } = await apiService.get(endPoint);
 
-  return championFlashcard;
+  return championFlashcards;
 }

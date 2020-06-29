@@ -1,4 +1,4 @@
-import { ChampionFlashcardsRepository } from '../../interfaces/ChampionFlashcard';
+import { ChampionFlashcardsRepository } from '../../interfaces/ChampionFlashcards';
 
 import find from './find';
 
