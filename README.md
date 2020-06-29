@@ -65,7 +65,7 @@ main();
 
 ## Features
 
-- [Champions]('https://github.com/ribeirogab/scuttle-crab/tree/master/examples/doc/Features/Champions'):
+- [Champions](https://github.com/ribeirogab/scuttle-crab/tree/master/examples/doc/Features/Champions):
   - Find;
 - Current Leagues:
   - Find;
