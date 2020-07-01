@@ -1,8 +1,10 @@
-export interface Where {
-  $AND?: {
-    $LIKE?: {
-      [key in string]: string | number;
-    };
+interface Query {
+  $LIKE?: {
+    [key in string]?: string | number;
   };
-  $OR?: { $LIKE?: { [key in string]: string | number } };
+}
+
+export interface Where extends Query {
+  $AND?: Query[];
+  $OR?: Query[];
 }

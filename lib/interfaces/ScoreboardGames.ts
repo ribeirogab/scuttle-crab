@@ -57,66 +57,7 @@ export interface ScoreboardGame {
   DateTime_UTC__precision: number;
 }
 
-interface Field {
-  name:
-    | 'Tournament'
-    | 'Team1'
-    | 'Team2'
-    | 'WinTeam'
-    | 'LossTeam'
-    | 'DateTime_UTC'
-    | 'DST'
-    | 'Team1Score'
-    | 'Team2Score'
-    | 'Winner'
-    | 'Gamelength'
-    | 'Gamelength_Number'
-    | 'Team1Bans'
-    | 'Team2Bans'
-    | 'Team1Picks'
-    | 'Team2Picks'
-    | 'Team1Names'
-    | 'Team2Names'
-    | 'Team1Links'
-    | 'Team2Links'
-    | 'Team1Dragons'
-    | 'Team2Dragons'
-    | 'Team1Barons'
-    | 'Team2Barons'
-    | 'Team1Towers'
-    | 'Team2Towers'
-    | 'Team1Gold'
-    | 'Team2Gold'
-    | 'Team1Kills'
-    | 'Team2Kills'
-    | 'Team1RiftHeralds'
-    | 'Team2RiftHeralds'
-    | 'Team1Inhibitors'
-    | 'Team2Inhibitors'
-    | 'Patch'
-    | 'MatchHistory'
-    | 'VOD'
-    | 'N_Page'
-    | 'N_MatchInTab'
-    | 'N_GameInMatch'
-    | 'Gamename'
-    | 'OverviewPage'
-    | 'UniqueGame'
-    | 'UniqueLine'
-    | 'ScoreboardID_Wiki'
-    | 'ScoreboardID_Riot'
-    | 'Note1'
-    | 'Note2'
-    | 'Note3'
-    | 'Note4'
-    | '_pageName'
-    | '_pageTitle'
-    | '_pageNamespace'
-    | '_pageID'
-    | '_ID';
-}
-
-type Keys =
+type Field =
   | 'Tournament'
   | 'Team1'
   | 'Team2'
@@ -173,12 +114,20 @@ type Keys =
   | '_pageID'
   | '_ID';
 
+interface Query {
+  $LIKE?: {
+    [key in Field]?: string | number;
+  };
+}
+
+interface Where extends Query {
+  $AND?: Query[];
+  $OR?: Query[];
+}
+
 export interface FindRequest {
   fields?: Field[];
-  where?: {
-    $AND?: { $LIKE?: { [key in Keys]?: string | number } };
-    $OR?: { $LIKE?: { [key in Keys]?: string | number } };
-  };
+  where?: Where;
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';

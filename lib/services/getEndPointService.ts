@@ -2,16 +2,12 @@ import { Where } from '../interfaces/WHERE';
 
 import generateWhereString from '../utils/generateWhereString';
 
-interface Field {
-  name: string;
-}
-
 interface Request {
   type: string;
-  fields: Field[];
+  fields: string[];
   order_by:
     | {
-        field: Field;
+        field: string;
         order: 'ASC' | 'DESC';
       }
     | undefined;
@@ -26,7 +22,7 @@ function getEndPointService({
   limit,
   where,
 }: Request): string {
-  const fieldsValue = fields.map(field => `${type}.${field.name}`).join('%2C+');
+  const fieldsValue = fields.map(field => `${type}.${field}`).join('%2C+');
 
   const whereValue = generateWhereString(where, type);
 
@@ -37,6 +33,8 @@ function getEndPointService({
   const url = `&tables=${type}&fields=${fieldsValue}&where=${whereValue}&order+by=${orderByValue}&limit=${
     limit || 100
   }&format=json`;
+
+  console.log(url);
 
   return url;
 }

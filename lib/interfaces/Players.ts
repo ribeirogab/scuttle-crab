@@ -48,57 +48,7 @@ export interface Player {
   Birthdate__precision: number;
 }
 
-interface Field {
-  name:
-    | 'ID'
-    | 'OverviewPage'
-    | 'Player'
-    | 'Image'
-    | 'Name'
-    | 'NativeName'
-    | 'NameAlphabet'
-    | 'NameFull'
-    | 'Country'
-    | 'Nationality'
-    | 'NationalityPrimary'
-    | 'Age'
-    | 'Birthdate'
-    | 'ResidencyFormer'
-    | 'Team'
-    | 'Team2'
-    | 'CurrentTeams'
-    | 'TeamSystem'
-    | 'Team2System'
-    | 'Residency'
-    | 'Role'
-    | 'FavChamps'
-    | 'SoloqueueIds'
-    | 'Stream'
-    | 'Twitter'
-    | 'Facebook'
-    | 'Askfm'
-    | 'Reddit'
-    | 'Youtube'
-    | 'Weibo'
-    | 'Vk'
-    | 'Instagram'
-    | 'TeamLast'
-    | 'RoleLast'
-    | 'IsRetired'
-    | 'IsPersonality'
-    | 'IsSubstitute'
-    | 'IsTrainee'
-    | 'IsLowercase'
-    | 'IsAutoTeam'
-    | 'IsLowContent'
-    | '_pageName'
-    | '_pageTitle'
-    | '_pageNamespace'
-    | '_pageID'
-    | '_ID';
-}
-
-type Keys =
+type Field =
   | 'ID'
   | 'OverviewPage'
   | 'Player'
@@ -146,12 +96,20 @@ type Keys =
   | '_pageID'
   | '_ID';
 
+interface Query {
+  $LIKE?: {
+    [key in Field]?: string | number;
+  };
+}
+
+interface Where extends Query {
+  $AND?: Query[];
+  $OR?: Query[];
+}
+
 export interface FindRequest {
   fields?: Field[];
-  where?: {
-    $AND?: { $LIKE?: { [key in Keys]?: string | number } };
-    $OR?: { $LIKE?: { [key in Keys]?: string | number } };
-  };
+  where?: Where;
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';

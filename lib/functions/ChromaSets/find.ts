@@ -16,7 +16,7 @@ export default async function find({
 
   const endPoint = getEndPointService({
     type: 'ChromaSets',
-    fields: fieldsToBeUsed,
+    fields: fieldsToBeUsed as string[],
     where: where as Where,
     order_by,
     limit,

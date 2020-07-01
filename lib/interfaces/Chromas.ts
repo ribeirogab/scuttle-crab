@@ -19,28 +19,7 @@ export interface Chroma {
   ReleaseDate__precision: string | number;
 }
 
-interface Field {
-  name:
-    | 'Name'
-    | 'Skin'
-    | 'Champion'
-    | 'IsBundleExclusive'
-    | 'IsLootExclusive'
-    | 'Special'
-    | 'ReleaseDate'
-    | 'BundleRP'
-    | 'RP'
-    | 'Hex1'
-    | 'Hex2'
-    | 'UniqueSet'
-    | '_pageName'
-    | '_pageTitle'
-    | '_pageNamespace'
-    | '_pageID'
-    | '_ID';
-}
-
-type Keys =
+type Field =
   | 'Name'
   | 'Skin'
   | 'Champion'
@@ -59,12 +38,20 @@ type Keys =
   | '_pageID'
   | '_ID';
 
+interface Query {
+  $LIKE?: {
+    [key in Field]?: string | number;
+  };
+}
+
+interface Where extends Query {
+  $AND?: Query[];
+  $OR?: Query[];
+}
+
 export interface FindRequest {
   fields?: Field[];
-  where?: {
-    $AND?: { $LIKE: { [key in Keys]?: string | number } };
-    $OR?: { $LIKE: { [key in Keys]?: string | number } };
-  };
+  where?: Where;
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';

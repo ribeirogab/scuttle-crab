@@ -16,7 +16,7 @@ export default async function find({
 
   const endPoint = getEndPointService({
     type: 'CurrentLeagues',
-    fields: fieldsToBeUsed,
+    fields: fieldsToBeUsed as string[],
     where: where as Where,
     order_by,
     limit,

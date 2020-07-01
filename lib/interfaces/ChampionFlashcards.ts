@@ -21,31 +21,7 @@ export interface ChampionFlashcard {
   _ID: number;
 }
 
-interface Field {
-  name:
-    | 'Year'
-    | 'Champion'
-    | 'ChampionRange'
-    | 'DamageType'
-    | 'CCLevel'
-    | 'BurstLevel'
-    | 'SustainedLevel'
-    | 'TankLevel'
-    | 'Goal'
-    | 'Strengths'
-    | 'Weaknesses'
-    | 'Ultimate'
-    | 'Mechanic'
-    | 'Classes'
-    | 'Roles'
-    | '_pageName'
-    | '_pageTitle'
-    | '_pageNamespace'
-    | '_pageID'
-    | '_ID';
-}
-
-type Keys =
+type Field =
   | 'Year'
   | 'Champion'
   | 'ChampionRange'
@@ -67,12 +43,20 @@ type Keys =
   | '_pageID'
   | '_ID';
 
+interface Query {
+  $LIKE?: {
+    [key in Field]?: string | number;
+  };
+}
+
+interface Where extends Query {
+  $AND?: Query[];
+  $OR?: Query[];
+}
+
 export interface FindRequest {
   fields?: Field[];
-  where?: {
-    $AND?: { $LIKE: { [key in Keys]?: string | number } };
-    $OR?: { $LIKE: { [key in Keys]?: string | number } };
-  };
+  where?: Where;
   order_by?: {
     field: Field;
     order: 'ASC' | 'DESC';

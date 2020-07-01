@@ -16,13 +16,13 @@ export default async function find({
 
   const endPoint = getEndPointService({
     type: 'ScoreboardGames',
-    fields: fieldsToBeUsed,
+    fields: fieldsToBeUsed as string[],
     where: where as Where,
     order_by,
     limit,
   });
 
-  const { data: champions } = await apiService.get(endPoint);
+  const { data: scoreboardGames } = await apiService.get(endPoint);
 
-  return champions;
+  return scoreboardGames;
 }
