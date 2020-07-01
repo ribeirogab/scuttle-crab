@@ -1,10 +1,10 @@
 export default [
-  { name: 'Event' },
-  { name: 'Page' },
-  { name: 'Priority' },
-  { name: '_pageName' },
-  { name: '_pageTitle' },
-  { name: '_pageNamespace' },
-  { name: '_pageID' },
-  { name: '_ID' },
+  'Event',
+  'Page',
+  'Priority',
+  '_pageName',
+  '_pageTitle',
+  '_pageNamespace',
+  '_pageID',
+  '_ID',
 ];
