@@ -34,8 +34,6 @@ function getEndPointService({
     limit || 100
   }&format=json`;
 
-  console.log(url);
-
   return url;
 }
 
