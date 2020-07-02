@@ -14,7 +14,7 @@ import currentLeagues from './functions/CurrentLeagues';
 // import leagueGroups from './functions/LeagueGroups';
 // import leagues from './functions/Leagues';
 // import listPlayerCurrent from './functions/ListPlayerCurrent';
-// import matchSchedule from './functions/MatchSchedule';
+import matchSchedule from './functions/MatchSchedule';
 // import matchScheduleGame from './functions/MatchScheduleGame';
 // import NASGLadder2018 from './functions/NASGLadder2018';
 // import NTLGlossary from './functions/NTLGlossary';
@@ -67,6 +67,7 @@ export default {
   chromaSets,
   chromas,
   currentLeagues,
+  matchSchedule,
   players,
   scoreboardGames,
 };
