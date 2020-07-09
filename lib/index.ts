@@ -1,16 +1,13 @@
-/* eslint-disable import/extensions */
 import champions from './functions/Champions';
 import championFlashcards from './functions/ChampionFlashcards';
 import chromaSets from './functions/ChromaSets';
 import chromas from './functions/Chromas';
-// import contracts from './functions/Contracts';
+import contracts from './functions/Contracts';
 import currentLeagues from './functions/CurrentLeagues';
-// import disambiguations from './functions/Disambiguations';
-// import externalContent from './functions/ExternalContent';
-// import GCDArchive from './functions/GCDArchive';
-// import hooks from './functions/Hooks';
-// import ignorePagedata from './functions/IgnorePagedata';
-// import items from './functions/Items';
+import disambiguations from './functions/Disambiguations';
+import externalContent from './functions/ExternalContent';
+import hooks from './functions/Hooks';
+import items from './functions/Items';
 // import leagueGroups from './functions/LeagueGroups';
 // import leagues from './functions/Leagues';
 // import listPlayerCurrent from './functions/ListPlayerCurrent';
@@ -66,7 +63,12 @@ export default {
   championFlashcards,
   chromaSets,
   chromas,
+  contracts,
   currentLeagues,
+  disambiguations,
+  externalContent,
+  hooks,
+  items,
   matchSchedule,
   players,
   scoreboardGames,
