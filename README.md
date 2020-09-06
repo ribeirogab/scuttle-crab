@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/ribeirogab/scuttle-crab/master/examples/logo.png" alt="scuttle-crab" width="200"/>
 </h1>
 
-# Scuttle Crab
+# LoL Esports API
 
 > A wrapper for the LOL Gamepedia REST API.
 
